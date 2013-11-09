@@ -47,3 +47,11 @@ gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
 
 # Use HAML for templating
 gem 'haml'
+
+# User HTTParty to use the APIs
+gem 'httparty'
+
+# Development Gems
+group :development do
+  gem 'pry'
+end
