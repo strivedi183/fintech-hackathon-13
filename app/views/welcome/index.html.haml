@@ -1,1 +1,11 @@
 %h1 Welcome Page
+
+#info_form_submit
+  = form_tag welcome_get_info_path, remote: true, method: :post do
+    = label_tag :first_symbol
+    = text_field_tag :first_symbol
+    = label_tag :second_symbol
+    = text_field_tag :second_symbol
+    = submit_tag 'Search'
+
+#info_display
