@@ -41,3 +41,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use Mongoid for the ODM for MongoDB
+gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
