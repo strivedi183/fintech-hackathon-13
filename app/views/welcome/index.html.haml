@@ -1,11 +1,62 @@
-%h1 Welcome Page
+#container
 
-#info_form_submit
-  = form_tag welcome_get_info_path, remote: true, method: :post do
-    = label_tag :first_symbol
-    = text_field_tag :first_symbol
-    = label_tag :second_symbol
-    = text_field_tag :second_symbol
-    = submit_tag 'Search'
+  %header
+    = image_tag('logo.png')
+    %h1 Merger Tracking Tool
 
-#info_display
+  #main
+
+    #content
+      Chart Here
+
+    #settings
+
+      .stock#ticker1 SYM1
+      .control PRICE 1
+      .control PRICE 2
+      .control VOL 1
+      .control VOL 2
+      .stock#ticker2 SYM2
+
+  %aside
+    %section
+      %h2 Active Mergers
+      %ul
+        %li
+          %h3 Article Title
+          %p Blurb
+        %li
+          %h3 Article Title
+          %p Blurb
+    %section
+      %h2 Rumor Mill
+      %ul
+        %li
+          %h3 Article Title
+          %p Blurb
+        %li
+          %h3 Article Title
+          %p Blurb
+    %section
+      %h2 Merger Watchlist
+      %ul
+        %li
+          %h3 Article Title
+          %p Blurb
+        %li
+          %h3 Article Title
+          %p Blurb
+  %footer
+    &copy; Footer Goes Here
+
+  %h1 Welcome Page
+
+  #info_form_submit
+    = form_tag welcome_get_info_path, remote: true, method: :post do
+      = label_tag :first_symbol
+      = text_field_tag :first_symbol
+      = label_tag :second_symbol
+      = text_field_tag :second_symbol
+      = submit_tag 'Search'
+
+  #info_display
