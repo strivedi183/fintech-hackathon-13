@@ -13,3 +13,8 @@
  *= reset
  *= style
  */
+
+ a {
+ 	text-decoration: none;
+ 	color:rgba(33, 255, 33, 0.8);
+ }

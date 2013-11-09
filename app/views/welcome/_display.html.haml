@@ -1,1 +1,5 @@
-%h1 Hello
+%ul
+	- @first_symbol_headlines_array.each do |h|
+		%li
+			%p 
+			= link_to(h[:headline], h[:url])
