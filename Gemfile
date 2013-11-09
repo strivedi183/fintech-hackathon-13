@@ -44,3 +44,6 @@ end
 
 # Use Mongoid for the ODM for MongoDB
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+
+# Use HAML for templating
+gem 'haml'
