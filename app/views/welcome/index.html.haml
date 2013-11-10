@@ -4,58 +4,62 @@
     = image_tag('logo.png')
     %h1 Merger Tracking Tool
 
+  / #input
+  /   %input#inputticker1{:name => "ticker1", :placeholder => "Enter Symbol", :type => "text"}
+  /     %input#inputticker2{:name => "ticker2", :placeholder => "Enter Symbol", :type => "text"}
+  /       #error
+  /         %span#errorsymbol SYMB
+  /         is not a recognized symbol. Please try another.
+
   #info_form_submit
   = form_tag welcome_get_info_path, remote: true, method: :post do
     = label_tag :first_symbol
-    = text_field_tag :first_symbol, nil, placeholder: "AAPL"
+    = text_field_tag :first_symbol
     = label_tag :second_symbol
     = text_field_tag :second_symbol
     = submit_tag 'Search'
 
   #main
-
     #content
       Chart here
-
     #chartsettings
+      #labels
+        %span Market Price
+        %span Social Volume
       #ticker1.stock SYM1
-      #price1tog.control.active PRICE 1
-      #price2tog.control.active PRICE 2
-      #volume1tog.control.active VOL 1
-      #volume2tog.control.active VOL 2
+      #price1tog.control.active HIDE SYMB
+      #price2tog.control.active HIDE SYMB
+      #volume1tog.control.active HIDE SYMB
+      #volume2tog.control.active HIDE SYMB
       #ticker2.stock SYM2
-
     #datesettings.clearfix
       .control 3 months
       .control 1 month
       .control.selected 1 week
       .control 1 day
-
   %aside
     %section
-      %h2 Active Mergers
+      %h2 Relevant Stories
       #info_display
     %section
-      %h2 Rumor Mill
+      %h2 Active Mergers
       %ul
         %li
           %h3 Article Title
-          %p Blurb
         %li
           %h3 Article Title
-          %p Blurb
+        %li
+          %h3 Article Title
+        %li
+          %h3 Article Title
     %section
       %h2 Merger Watchlist
-      %ul
-        %li
-          %h3 Article Title
-          %p Blurb
-        %li
-          %h3 Article Title
-          %p Blurb
+      %input#enterwatchlist{:name => "watchlist", :placeholder => "Enter Symbol", :type => "text"}
+        %ul#watchlist
+          %li
+            %h3 AAPL
   %footer
-    &copy; Footer Goes Here
-
-  %h1 Welcome Page
+    \&copy; Footer Goes Here
+/ #container
 
   
