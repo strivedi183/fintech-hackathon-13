@@ -5,8 +5,6 @@ $( document ).ready(function() {
 	$("#first_symbol").val(first_symbol);
 	$("#second_symbol").val(second_symbol);
 
-	// delay(1000);
-
 	$.ajax({
 	  type: "POST",
 	  url: "/welcome/get_info",

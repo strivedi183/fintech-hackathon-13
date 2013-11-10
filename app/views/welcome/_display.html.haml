@@ -1,5 +1,5 @@
 %ul
-	- @first_symbol_headlines_array.each do |h|
+	- @first_symbol_headlines_array.last(4).each do |h|
 		%li
-			%p 
+			%h3 
 			= link_to(h[:headline], h[:url])
