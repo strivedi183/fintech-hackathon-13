@@ -2,7 +2,7 @@
 
   %header
     = image_tag('logo.png')
-    %h1 Merger Tracking Tool
+    %h1 M&A Tracker
 
   / #input
   /   %input#inputticker1{:name => "ticker1", :placeholder => "Enter Symbol", :type => "text"}
@@ -21,22 +21,22 @@
 
   #main
     #content
-      Chart here
-    #chartsettings
-      #labels
-        %span Market Price
-        %span Social Volume
-      #ticker1.stock SYM1
-      #price1tog.control.active HIDE SYMB
-      #price2tog.control.active HIDE SYMB
-      #volume1tog.control.active HIDE SYMB
-      #volume2tog.control.active HIDE SYMB
-      #ticker2.stock SYM2
-    #datesettings.clearfix
-      .control 3 months
-      .control 1 month
-      .control.selected 1 week
-      .control 1 day
+      #chart
+      #chartsettings
+        #labels
+          %span Market Price
+          %span Social Volume
+        #ticker1.stock SYM1
+        #price1tog.control.active HIDE SYMB
+        #price2tog.control.active HIDE SYMB
+        #volume1tog.control.active HIDE SYMB
+        #volume2tog.control.active HIDE SYMB
+        #ticker2.stock SYM2
+      #datesettings.clearfix
+        .control 3 months
+        .control 1 month
+        .control.selected 1 week
+        .control 1 day
   %aside
     %section
       %h2 Relevant Stories

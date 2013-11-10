@@ -1,7 +1,7 @@
 $(window).load( function() {
 
   var margin = {top: 20, right: 80, bottom: 30, left: 50},
-      width = 650 - margin.left - margin.right,
+      width = 570 - margin.left - margin.right,
       height = 300 - margin.top - margin.bottom;
 
   var parseDate = d3.time.format("%Y%m%d").parse;
@@ -13,13 +13,14 @@ $(window).load( function() {
       .range([height, 0]);
 
   var y2 = d3.scale.linear()
-    .range([height, 0]);
+      .range([height, 0]);
 
   var color = d3.scale.category10();
 
   var xAxis = d3.svg.axis()
       .scale(x)
-      .orient("bottom");
+      .orient("bottom")
+      .tickFormat(d3.time.format("%b"));
 
   var yAxis = d3.svg.axis()
       .scale(y)
@@ -46,7 +47,7 @@ $(window).load( function() {
   //     return "<span style='color:seagreen'>" + y(d.stock_price)+ "</span>";
   //   })
 
-  var svg = d3.select("#content").append("svg")
+  var svg = d3.select("#chart").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
