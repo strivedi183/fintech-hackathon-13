@@ -52,11 +52,11 @@ var svg = d3.select("body").append("svg")
 
 var stock_data, mentions;
 
-Parse.initialize("pTIObRSyHRKupzJySoBXk2LIlVIMIYTujkZGJfDp", "VIdoauTktSkduOLw2CDmui2YO28Mb91pTcDS6g7v");
-var datacsv = Parse.object.extend('stockdata');
-var query = new Parse.Query(datacsv);
+// Parse.initialize("pTIObRSyHRKupzJySoBXk2LIlVIMIYTujkZGJfDp", "VIdoauTktSkduOLw2CDmui2YO28Mb91pTcDS6g7v");
+// var datacsv = Parse.object.extend('stockdata');
+// var query = new Parse.Query(datacsv);
 
-d3.csv("data.csv", function(error, data) {
+d3.csv("http://192.241.172.9/data.csv", function(error, data) {
 
   stock_data=data
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
