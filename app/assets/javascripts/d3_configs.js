@@ -37,12 +37,12 @@ var line_2 = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y2(d.stock_price); });
 
-var tip = d3.tip()
-  .attr('class', 'd3-tip')
-  .offset([-10, 0])
-  .html(function(d) {
-    return "<span style='color:seagreen'>" + y(d.stock_price)+ "</span>";
-  })
+// var tip = d3.tip()
+//   .attr('class', 'd3-tip')
+//   .offset([-10, 0])
+//   .html(function(d) {
+//     return "<span style='color:seagreen'>" + y(d.stock_price)+ "</span>";
+//   })
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -52,7 +52,11 @@ var svg = d3.select("body").append("svg")
 
 var stock_data, mentions;
 
-d3.tsv("data.tsv", function(error, data) {
+Parse.initialize("pTIObRSyHRKupzJySoBXk2LIlVIMIYTujkZGJfDp", "VIdoauTktSkduOLw2CDmui2YO28Mb91pTcDS6g7v");
+var datacsv = Parse.object.extend('stockdata');
+var query = new Parse.Query(datacsv);
+
+d3.csv("data.csv", function(error, data) {
 
   stock_data=data
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
@@ -63,7 +67,7 @@ d3.tsv("data.tsv", function(error, data) {
 
 
 
-svg.call(tip);
+// svg.call(tip);
 
 var companies = color.domain().map(function(name) {
     return {
@@ -118,15 +122,15 @@ var company = svg.selectAll(".company")
       .attr("class", "line")
       .attr("d", function(d) { return line(d.values); })
       .style("stroke", function(d) { return color(d.name); })
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide)
+      // .on('mouseover', tip.show)
+      // .on('mouseout', tip.hide)
 
   company.append("path")
       .attr("class", "line_2")
       .attr("d", function(d) { return line_2(d.values); })
       .style("stroke", "green")
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide)
+      // .on('mouseover', tip.show)
+      // .on('mouseout', tip.hide)
 
   company.append("text")
       .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
@@ -137,7 +141,7 @@ var company = svg.selectAll(".company")
       // .text(function(d) { return d.stock_price; })
 
 var div = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
+    // .attr("class", "tooltip")
+    // .style("opacity", 0);
 
 });
