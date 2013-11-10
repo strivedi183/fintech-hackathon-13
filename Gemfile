@@ -35,9 +35,14 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+group :development do
+  gem 'capistrano',  '~> 2.15.5'
+  gem 'rvm-capistrano'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -55,3 +60,6 @@ gem 'httparty'
 group :development do
   gem 'pry'
 end
+
+# Adding D3 to the project
+gem "d3-rails"
