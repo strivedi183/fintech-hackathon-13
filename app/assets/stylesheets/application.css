@@ -12,6 +12,7 @@
  *= require_tree .
  *= reset
  *= style
+ *= d3_styles
  */
 
  a {

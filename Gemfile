@@ -60,3 +60,6 @@ gem 'httparty'
 group :development do
   gem 'pry'
 end
+
+# Adding D3 to the project
+gem "d3-rails"
